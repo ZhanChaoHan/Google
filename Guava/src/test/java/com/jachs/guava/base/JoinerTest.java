@@ -8,7 +8,7 @@ import org.junit.Test;
 import com.google.common.base.Joiner;
 
 /***
- * 
+ * 连接器
  * @author zhanchaohan
  *
  */
