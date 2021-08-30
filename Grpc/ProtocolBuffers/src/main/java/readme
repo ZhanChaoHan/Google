@@ -1,0 +1,8 @@
+https://github.com/protocolbuffers/protobuf/tree/master/java
+
+protoc --version
+
+$ protoc --java_out=${OUTPUT_DIR} path/to/your/proto/file
+protoc --java_out=src/main/java src/main/resources/helloworld.proto
+
+https://www.cnblogs.com/ZhuChangwu/p/11972798.html
