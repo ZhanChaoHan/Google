@@ -1,22 +1,24 @@
-package com.jachs.protocolbuffers.student.se;
+package com.jachs.protocolbuffers.student;
 
 import java.io.Serializable;
+
 
 /***
  * 
  * @author zhanchaohan
  *
  */
-public class Student implements Serializable{
+public class MyStudent implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String name;
 	private String email;
 	
-	
-	public Student() {
+
+	public MyStudent() {
 		super();
 	}
-	public Student(int id, String name, String email) {
+	public MyStudent(int id, String name, String email) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -40,6 +42,4 @@ public class Student implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
 }

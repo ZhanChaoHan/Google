@@ -8,6 +8,7 @@ import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 import org.junit.Test;
 
@@ -19,7 +20,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
  *         protoc --java_out=src/main/java src/main/resources/student.proto
  */
 public class StudentTest {
-
+	
 	@Test
 	public void test1() throws InvalidProtocolBufferException {
 		Student student = Student.newBuilder().setId(0).setName("zcs").setEmail("568947@kcl.com").build();
@@ -37,9 +38,7 @@ public class StudentTest {
 		Student sa = Student.newBuilder()
 				.setId(0).setName("zcs").setEmail("568947@kcl.com").build();
 		
-		com.jachs.protocolbuffers.student.se.Student sb=
-				new com.jachs.protocolbuffers.student.se.Student(0, "zcs", "568947@kcl.com");
-		
+		MyStudent sb=new MyStudent(0, "zcs", "568947@kcl.com");
 		ObjectOutput osB=new ObjectOutputStream(new FileOutputStream("e:\\b"));
 		
 		osB.writeObject(sb);
@@ -53,7 +52,7 @@ public class StudentTest {
 		
 		Student sa =Student.parseFrom(new FileInputStream("e:\\a"));
 		
-		com.jachs.protocolbuffers.student.se.Student sb=(com.jachs.protocolbuffers.student.se.Student) oiB.readObject();
+		MyStudent sb=(MyStudent) oiB.readObject();
 		
 		System.out.println(sa.getEmail());
 		System.out.println(sb.getEmail());
